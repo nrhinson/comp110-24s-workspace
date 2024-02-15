@@ -7,9 +7,7 @@ __author__ = "730664337"
 import random
 
 def main(grid_size: int, secret_row: int, secret_column: int) -> None:
-
-    """Defining main block"""
-
+    """Defining main block."""
     turn_count: int = 1
     win_check: bool = False
     while turn_count < 6 and not(win_check):
@@ -29,9 +27,7 @@ def main(grid_size: int, secret_row: int, secret_column: int) -> None:
         print("X/5 - Better luck next time!")
 
 def input_guess(board_size: int, type_of_guess: str) -> int:
-
-    """This is the function that asks the player for their imput and checks if its vaild"""
-
+    """This is the function that asks the player for their imput and checks if its vaild."""
     assert type_of_guess == "row" or type_of_guess == "column"
     player_input: int = int(input(f"Guess a {type_of_guess}: "))
     while (player_input < 1 or player_input > board_size):
@@ -39,9 +35,7 @@ def input_guess(board_size: int, type_of_guess: str) -> int:
     return player_input
 
 def print_grid(board_size: int, row_guess: int, column_guess: int, correct_check: bool) -> None:
-
-    "This is the function that prints the battleship board once given a guess"
-
+    """This is the function that prints the battleship board once given a guess."""
     # Initalize variables
     BLUE_BOX: str = "\U0001F7E6"
     RED_BOX: str = "\U0001F7E5"
@@ -66,9 +60,7 @@ def print_grid(board_size: int, row_guess: int, column_guess: int, correct_check
         row_counter += 1
 
 def correct_guess(secret_row: int, secret_column: int, guessed_row: int, guessed_column: int) -> bool:
-
-    """This is the function that checks to see if the player hit the correct spot"""
-
+    """This is the function that checks to see if the player hit the correct spot."""
     if(secret_row == guessed_row and secret_column == guessed_column):
         return True
     return False
