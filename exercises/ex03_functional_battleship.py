@@ -19,7 +19,7 @@ def main(grid_size: int, secret_row: int, secret_column: int) -> None:
             win_check = True
         else:
             print("Miss!")
-        turn_count =+ 1
+        turn_count += 1
     if correct_check == False:
         print("X/5 - Better luck next time!")
     
