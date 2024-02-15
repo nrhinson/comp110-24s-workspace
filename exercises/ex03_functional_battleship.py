@@ -65,11 +65,11 @@ def print_grid(board_size: int, row_guess: int, column_guess: int, correct_check
 
 def correct_guess(secret_row: int, secret_column: int, guessed_row: int, guessed_column: int) -> bool:
     """This is the function that checks to see if the player hit the correct spot."""
-    if(secret_row == guessed_row and secret_column == guessed_column):
+    if (secret_row == guessed_row and secret_column == guessed_column):
         return True
     return False
 
 
 if __name__ == "__main__":
-        grid_size: int = random.randint(3, 5)
-        main(grid_size, random.randint(1, grid_size), random.randint(1, grid_size))
+    grid_size: int = random.randint(3, 5)
+    main(grid_size, random.randint(1, grid_size), random.randint(1, grid_size))
