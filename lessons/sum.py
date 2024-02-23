@@ -27,4 +27,3 @@ def f_range_sum(vals: list[float]) -> float:
     for index in range(0, len(vals)):
         total += vals[index]
     return total
-
