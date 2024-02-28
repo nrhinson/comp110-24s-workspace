@@ -3,7 +3,7 @@
 __author__ = "730664337"
 
 
-def get_keys (givenDict: dict[str, int]) -> list[str]:
+def get_keys(givenDict: dict[str, int]) -> list[str]:
     """This function returns all the keys in a dictonary."""
     returnList: list[str] = []
     for i in givenDict:
@@ -11,7 +11,7 @@ def get_keys (givenDict: dict[str, int]) -> list[str]:
     return returnList
 
 
-def get_values (givenDict: dict[str, int]) -> list[int]:
+def get_values(givenDict: dict[str, int]) -> list[int]:
     """This function returns all the values in a dictonary."""
     returnList: list[int] = []
     for i in givenDict:
