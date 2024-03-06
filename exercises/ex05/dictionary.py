@@ -20,9 +20,10 @@ def favorite_color(givenDict: dict[str, str]) -> str:
         counter = 0
         for b in givenDict:
             if givenDict[i] == givenDict[b]:
-                counter += 1    
+                counter += 1
         if counter > mostCommonColorCount:
             mostCommonColor = givenDict[i]
+            mostCommonColorCount = counter
     return mostCommonColor
 
 
