@@ -11,7 +11,7 @@ def invert(givenDict: dict[str, str]) -> dict[str, str]:
     return returnDict
 
 
-def favorte_color(givenDict: dict[str, str]) -> str:
+def favorite_color(givenDict: dict[str, str]) -> str:
     """This function counts the most common colors out of a list of people and their favorte color."""
     mostCommonColor: str
     mostCommonColorCount: int = 0
