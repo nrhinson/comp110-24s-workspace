@@ -5,7 +5,7 @@ __author__ = "730664337"
 
 def invert(givenDict: dict[str, str]) -> dict[str, str]:
     """This function inverts the keys and indexs of a dictionary."""
-    returnDict: dict[str,str] = {}
+    returnDict: dict[str, str] = {}
     for i in givenDict:
         returnDict[givenDict[i]] = i
     return returnDict
@@ -17,7 +17,7 @@ def favorite_color(givenDict: dict[str, str]) -> str:
     mostCommonColorCount: int = 0
     counter: int
     for i in givenDict:
-        counter = 1
+        counter = 0
         for b in givenDict:
             if givenDict[i] == givenDict[b]:
                 counter += 1    
