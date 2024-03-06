@@ -11,7 +11,7 @@ def invert(givenDict: dict[str, str]) -> dict[str, str]:
     return returnDict
 
 
-def favorte_colors(givenDict: dict[str, str]) -> str:
+def favorte_color(givenDict: dict[str, str]) -> str:
     """This function counts the most common colors out of a list of people and their favorte color."""
     mostCommonColor: str
     mostCommonColorCount: int = 0
@@ -19,7 +19,7 @@ def favorte_colors(givenDict: dict[str, str]) -> str:
     for i in givenDict:
         counter = 1
         for b in givenDict:
-            if givenDict[i] == givenDict [b]:
+            if givenDict[i] == givenDict[b]:
                 counter += 1    
         if counter > mostCommonColorCount:
             mostCommonColor = givenDict[i]
@@ -34,9 +34,9 @@ def count(givenList: list[str]) -> dict[str, int]:
         alreadyRan: bool = False
         for b in returnDict:
             if b == a:
-                alreadyRan == True
+                alreadyRan = True
         if not alreadyRan:
-            howMuch: int = 0
+            howMuch = 0
             for c in givenList:
                 if c == a:
                     howMuch += 1
@@ -64,7 +64,7 @@ def alphabetizer(givenList: list[str]) -> dict[str, list[str]]:
     return returnDict
 
 
-def update_attendance(givenDict: dict[str, list[str]], day: str, student: str) -> dict[str,list[str]]:
+def update_attendance(givenDict: dict[str, list[str]], day: str, student: str) -> None:
     """This function is used to update attendance."""
     keyAlreadyUsed: bool = False
     newList: list[str]
@@ -77,4 +77,3 @@ def update_attendance(givenDict: dict[str, list[str]], day: str, student: str) -
         givenDict[day] = newList
     else:
         givenDict[day] = [student]
-    return givenDict
