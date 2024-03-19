@@ -4,7 +4,7 @@ __author__ = "730664337"
 
 
 def add_by_kind(plants_by_kind: dict[str, list[str]], plant_kind: str, plant: str) -> None:
-    """This function adds a plant based on kind"""
+    """This function adds a plant based on kind."""
     if plant_kind in plants_by_kind:
         plants_by_kind[plant_kind].append(plant)
     else:
@@ -13,7 +13,7 @@ def add_by_kind(plants_by_kind: dict[str, list[str]], plant_kind: str, plant: st
 
 
 def add_by_date(plants_by_date: dict[str, list[str]], month: str, plant: str) -> None:
-    """This function adds a plant based on date"""
+    """This function adds a plant based on date."""
     if month in plants_by_date:
         plants_by_date[month].append(plant)
     else:
@@ -22,7 +22,7 @@ def add_by_date(plants_by_date: dict[str, list[str]], month: str, plant: str) ->
 
 
 def lookup_by_kind_and_date(plants_by_kind: dict[str, list[str]], plants_by_date: dict[str, list[str]], plant_kind: str, month: str) -> str:
-    """This function looks up a plant based on date and type and returns a string accordingly"""
+    """This function looks up a plant based on date and type and returns a string accordingly."""
     if (plant_kind in plants_by_kind) and (month in plants_by_date):
         list_of_plants_by_kind: list[str] = plants_by_kind[plant_kind]
         list_of_plants_by_date: list[str] = plants_by_date[month]
