@@ -1,5 +1,8 @@
 """Some functions for my garden plan!"""
 
+__author__ = "730664337"
+
+
 def add_by_kind(plants_by_kind: dict[str, list[str]], plant_kind: str, plant: str) -> None:
     if plant_kind in plants_by_kind:
         plants_by_kind[plant_kind].append(plant)
