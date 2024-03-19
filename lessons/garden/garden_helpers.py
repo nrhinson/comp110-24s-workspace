@@ -13,7 +13,7 @@ def add_by_date(plants_by_date: dict[str, list[str]], month: str, plant: str) ->
         plants_by_date[month].append(plant)
     else:
         plants_by_date[month] = []
-        -plants_by_date[month].append(plant)
+        plants_by_date[month].append(plant)
 
 
 
