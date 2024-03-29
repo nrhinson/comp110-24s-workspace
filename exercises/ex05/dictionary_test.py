@@ -2,7 +2,7 @@
 
 __author__ = "730664337"
 
-from dictionary import *
+from lessons.ex5.dictionary import *
 import pytest
 
 def test_invert_use1 () -> None:
