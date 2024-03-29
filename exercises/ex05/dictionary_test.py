@@ -90,12 +90,12 @@ def test_alphabetizer_edge () -> None:
     assert new_dict == {"1": ["1 cat"], "2": ["2 Dog"], "3": ["3 Parrot"], "4": ["4 Snake"], "5": ["5 Turtle"]}
 
     
-
 def update_attendance_use1 () -> None:
     """This tests adding a student to an already existing day"""
     new_list: dict[str, list[str]] = {"Monday": ["Joe", "Jackson", "Nick"], "Tuesday": ["Nick", "Joe"], "Wendsay": ["Jackson", "Josh", "Alex"]}
     update_attendance(new_list, "Tuesday", "Alex")
     assert new_list == {"Monday": ["Joe", "Jackson", "Nick"], "Tuesday": ["Nick", "Joe", "Alex"], "Wendsay": ["Jackson", "Josh", "Alex"]}
+
 
 def update_attendance_use2 () -> None:
     """This test adds a studnet to a day that does not exist"""

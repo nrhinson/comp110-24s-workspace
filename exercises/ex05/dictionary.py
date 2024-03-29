@@ -71,7 +71,9 @@ def update_attendance(given_dict: dict[str, list[str]], day: str, student: str) 
     new_list: list[str]
     for i in given_dict:
         if day == i:
-            key_already_used = True
+            for i in given_dict[day]:
+                if student == i:
+                    key_already_used = True
     if key_already_used:
         new_list = given_dict[day]
         new_list.append(student)
