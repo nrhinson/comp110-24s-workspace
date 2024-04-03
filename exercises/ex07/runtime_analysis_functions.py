@@ -8,7 +8,7 @@ MAX_VAL: int = 10 ** 5
 def random_descending_list(n: int) -> list[int]:
     """Generate a list of random descending integers."""
     new_list: list[int] = []
-    for num in range(0, n-1):
+    for num in range(0, n):
         new_list.append(random.randint(0-MAX_VAL, MAX_VAL))
     current_index: int = 1
     location_of_num_to_insert: int = 0
