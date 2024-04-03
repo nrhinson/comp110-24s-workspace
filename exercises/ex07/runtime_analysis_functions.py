@@ -8,11 +8,21 @@ MAX_VAL: int = 10 ** 5
 def random_descending_list(n: int) -> list[int]:
     """Generate a list of random descending integers."""
     new_list: list[int] = []
-    upper_bound = MAX_VAL
     for num in range(n-1):
-        list[num] = random.randint(upper_bound, 0-MAX_VAL)
-        upper_bound = list[num]
+        new_list[num] = random.randint(0-MAX_VAL, MAX_VAL)
+    current_index: int = 1
+    location_of_num_to_insert: int = 0
+    for num_to_insert in new_list[1:]:
+        location_of_num_to_insert = current_index
+        for number in range(current_index):
+            if (new_list[location_of_num_to_insert-1] < num_to_insert):
+                new_list[location_of_num_to_insert] = new_list[location_of_num_to_insert-1] 
+                new_list[location_of_num_to_insert-1] = num_to_insert
+                location_of_num_to_insert -= 1
+        current_index += 1
     return new_list
+
+print(random_descending_list(4))
 
 def evaluate_runtime(fn_name, start_size: int, end_size: int) -> np.array:
     """Evaluate the runtime for different size inputs."""
