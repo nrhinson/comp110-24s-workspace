@@ -10,6 +10,7 @@ def random_descending_list(n: int) -> list[int]:
     new_list: list[int] = []
     for num in range(0, n-1):
         new_list.append(random.randint(0-MAX_VAL, MAX_VAL))
+    new_list.append(random.randint(0-MAX_VAL, MAX_VAL))
     current_index: int = 1
     location_of_num_to_insert: int = 0
     for num_to_insert in new_list[1:]:
