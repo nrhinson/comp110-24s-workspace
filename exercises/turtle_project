@@ -35,7 +35,7 @@ def main() -> None:
 
 
 def tree(t_turtle: Turtle, x: float, y: float, tree_size: int) -> None:
-        """"Prints a tree, Note: X Y cords represent the middle bottom."""
+        """Prints a tree, Note: X Y cords represent the middle bottom."""
         def treeBranches(t_turtle: Turtle, x: float, y: float, branchNum: int, branchSize: int):
               """Recursive function for creating the branches of a tree"""
               if (branchNum != branchSize):
