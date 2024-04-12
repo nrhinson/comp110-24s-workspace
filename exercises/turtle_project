@@ -33,6 +33,7 @@ def main() -> None:
     star(my_turtle, 400, 10, 20, 20, False)
     done()
 
+
 def tree(t_turtle: Turtle, x: float, y: float, tree_size: int) -> None:
         """"Prints a tree, Note: X Y cords represent the middle bottom."""
         def treeBranches(t_turtle: Turtle, x: float, y: float, branchNum: int, branchSize: int):
@@ -73,6 +74,7 @@ def tree(t_turtle: Turtle, x: float, y: float, tree_size: int) -> None:
         t_turtle.right(90)
         star(t_turtle, x, y+tree_size*10.5, 0, 30, True)
 
+
 def ornaments(o_turtle: Turtle, x: float, y: float, color: str, rings: int, radius: int) -> None:
     """Recursive formula that draws circular ordamanets"""
     if rings == 0:#Draws what the ornament hangs from and ends function
@@ -90,6 +92,7 @@ def ornaments(o_turtle: Turtle, x: float, y: float, color: str, rings: int, radi
         o_turtle.pendown()
         o_turtle.circle(radius/rings)
         ornaments(o_turtle, x, y, color, rings-1, radius)
+
 
 def present(p_turtle: Turtle, x: float, y: float, width: float, height: float, color: str, bow: bool) -> None:
     """Creates a single, box present"""
