@@ -1,0 +1,156 @@
+"""This creates a christmas tree scene using the elements of, a tree, presents, ordaments, and stars """
+	 
+__author__ = "730664337"
+	 
+from turtle import Turtle, colormode, done
+	 
+
+def main() -> None:
+    """The commands to draw my functions"""
+    my_turtle: Turtle = Turtle()
+    my_turtle.speed(10)
+    tree(my_turtle, 0, -500, 50)
+    present(my_turtle, -100, -450, 50, 100, "Red", True)
+    present(my_turtle, -150, -475, 100, 50, "Blue", True)
+    present(my_turtle, 200, -475, 50, 50, "Green", False)
+    present(my_turtle, 250, -475, 50, 50, "Black", False)
+    present(my_turtle, 225, -420, 50, 50, "Pink", True)
+    ornaments(my_turtle, 50, -150, "Red", 5, 5)
+    ornaments(my_turtle, 80, -200, "Blue", 2, 20)
+    ornaments(my_turtle, -80, -350, "Green", 7, 10)
+    ornaments(my_turtle, 0, -250, "Purple", 2, 30)
+    ornaments(my_turtle, -60, -200, "Orange", 4, 25)
+    ornaments(my_turtle, -50, -300, "Black", 8, 6)
+    ornaments(my_turtle, -25, -150, "Blue", 5, 10)
+    ornaments(my_turtle, 0, -350, "Yellow", 3, 30)
+    ornaments(my_turtle, 50, -300, "Red", 1, 20)
+    star(my_turtle, -300, 0, 10, 20, False)
+    star(my_turtle, -405, -50, 5, 20, False)
+    star(my_turtle, -225, -100, 60, 20, False)
+    star(my_turtle, -300, 100, 20, 20, False)
+    star(my_turtle, 200, 100, 70, 20, False)
+    star(my_turtle, 100, -50, 20, 20, False)
+    star(my_turtle, 400, 10, 20, 20, False)
+    done()
+
+def tree(t_turtle: Turtle, x: float, y: float, tree_size: int) -> None:
+        """"Prints a tree, Note: X Y cords represent the middle bottom."""
+        def treeBranches(t_turtle: Turtle, x: float, y: float, branchNum: int, branchSize: int):
+              """Recursive function for creating the branches of a tree"""
+              if (branchNum != branchSize):
+                t_turtle.penup()
+                t_turtle.goto((x-tree_size*3)+((tree_size/4)*branchSize), y+tree_size*branchSize)
+                t_turtle.pendown()
+                t_turtle.right(90)
+                t_turtle.forward(tree_size*6-(branchSize*(tree_size/2)))
+                t_turtle.left(135)
+                t_turtle.forward((((tree_size)**2)*2)**(1/2))
+                t_turtle.penup()
+                t_turtle.goto((x-tree_size*3)+((tree_size/4)*branchSize), y+tree_size*branchSize)
+                t_turtle.pendown()
+                t_turtle.right(90)
+                t_turtle.forward((((tree_size)**2)*2)**(1/2))
+                t_turtle.left(45)
+                treeBranches(t_turtle, x, y, branchNum, branchSize+1)              
+        t_turtle.penup()
+        t_turtle.goto(x, y)
+        t_turtle.pendown()
+        t_turtle.color("Brown")#Lines from this point forward draw the stump
+        t_turtle.left(180)
+        t_turtle.forward(tree_size)
+        t_turtle.right(90)
+        t_turtle.forward(tree_size)
+        t_turtle.penup()
+        t_turtle.goto(x, y) 
+        t_turtle.pendown()
+        t_turtle.right(90)
+        t_turtle.forward(tree_size)
+        t_turtle.left(90)
+        t_turtle.forward(tree_size)
+        t_turtle.color("Green")
+        treeBranches(t_turtle, x, y+tree_size, 9, 0)
+        t_turtle.penup()
+        t_turtle.right(90)
+        star(t_turtle, x, y+tree_size*10.5, 0, 30, True)
+
+def ornaments(o_turtle: Turtle, x: float, y: float, color: str, rings: int, radius: int) -> None:
+    """Recursive formula that draws circular ordamanets"""
+    if rings == 0:#Draws what the ornament hangs from and ends function
+        o_turtle.penup()
+        o_turtle.goto(x, y+radius)
+        o_turtle.pendown()
+        o_turtle.left(90)
+        o_turtle.forward(radius/2)
+        o_turtle.right(90)
+        return
+    else:#Creates circles until rings int is filled
+        o_turtle.penup()
+        o_turtle.color(color)
+        o_turtle.goto(x, y-radius/rings)
+        o_turtle.pendown()
+        o_turtle.circle(radius/rings)
+        ornaments(o_turtle, x, y, color, rings-1, radius)
+
+def present(p_turtle: Turtle, x: float, y: float, width: float, height: float, color: str, bow: bool) -> None:
+    """Creates a single, box present"""
+    p_turtle.penup()
+    p_turtle.color(color)
+    for a in range(4): #Prints the middle cross of the box 
+        p_turtle.goto(x, y)
+        p_turtle.pendown()
+        p_turtle.left(90*a)
+        if a == 1 or a == 2 :
+            p_turtle.forward(height/2)
+        else:
+             p_turtle.forward(width/2)
+    p_turtle.goto(x-(width/2), y-(height/2)) #sends turtle to where the bottom left of the box begins
+    p_turtle.right(270)
+    for a in range(2): #Prints each corner of the box
+        p_turtle.left(90)
+        p_turtle.forward(width)
+        p_turtle.left(90)
+        p_turtle.forward(height)
+    p_turtle.penup()
+    if bow: #Creates a bow if nessasary (triangle on top of the box)
+        p_turtle.left(180)
+        p_turtle.goto(x, y+(height/2))
+        p_turtle.pendown()
+        p_turtle.left(45)
+        p_turtle.forward((((width/8)**2)*2)**(1/2))#This creates a diagonal line that matches the change in x of 1/8th the width
+        p_turtle.right(135)
+        p_turtle.forward(width/4)
+        p_turtle.right(135)
+        p_turtle.forward((((width/8)**2)*2)**(1/2))
+        p_turtle.left(135)
+    else:
+        p_turtle.left(90) #Returns turtle to default angle
+    
+
+
+def star(s_turtle: Turtle, x: float, y: float, inital_rotation: int, size: int, for_tree: bool) -> None:
+    s_turtle.penup()
+    s_turtle.goto(x,y)
+    s_turtle.right(inital_rotation)
+    s_turtle.pendown()
+    if for_tree: #Draws the tree topper if nessasary
+        s_turtle.color("Black")
+        s_turtle.right(70)
+        s_turtle.forward(size*1.5)
+        s_turtle.right(110)
+        s_turtle.forward((size*1.5)*.684)
+        s_turtle.right(110)
+        s_turtle.forward(size*1.5)
+        s_turtle.right(70)
+    s_turtle.right(36)
+    s_turtle.color("Yellow")
+    for a in range(5):#Draws the star
+        s_turtle.forward(size)
+        s_turtle.left(144)
+        s_turtle.forward(size)
+        s_turtle.right(72)
+    s_turtle.left(36)#Return to intal pos
+    s_turtle.left(inital_rotation)
+    s_turtle.penup()
+
+if __name__ == "__main__":
+    main()
