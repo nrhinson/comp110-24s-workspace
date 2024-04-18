@@ -4,9 +4,9 @@ from __future__ import annotations
 
 __author__ = "730664337"
 
-class Point:
-    """Class for a point"""
 
+class Point:
+    """Class for a point."""
 
     x: float
     y: float
