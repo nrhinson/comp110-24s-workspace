@@ -12,8 +12,8 @@ class Point:
 
     def __init__(self, x_init: float, y_init: float) -> None:
         """Sets x and y when creating an instnace of the class"""
-        self.x == x_init
-        self.y == y_init
+        self.x = x_init
+        self.y = y_init
 
     def scale_by(self, factor: int) -> None:
         """Scales x and y by given factor"""
