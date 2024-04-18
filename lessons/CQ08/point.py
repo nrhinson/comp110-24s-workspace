@@ -1,8 +1,8 @@
+from __future__ import annotations
+
 """CQ08."""
 
 __author__ = "730664337"
-
-from __future__ import annotations
 
 class point:
     """Class for a point"""
