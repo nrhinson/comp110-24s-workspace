@@ -4,7 +4,7 @@ from __future__ import annotations
 
 __author__ = "730664337"
 
-class point:
+class Point:
     """Class for a point"""
 
     x: float
@@ -20,8 +20,8 @@ class point:
         self.x *= factor
         self.y *= factor
 
-    def scale(self, factor: int) -> point:
+    def scale(self, factor: int) -> Point:
         """Scales x and y by given factor and creates a new point"""
-        return_point: point = point(self.x, self.y)
+        return_point: Point = Point(self.x, self.y)
         return_point.scale_by(factor)
         return return_point
