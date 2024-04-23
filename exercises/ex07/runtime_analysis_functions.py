@@ -23,12 +23,9 @@ def random_descending_list(n: int) -> list[int]:
         current_index += 1
     return new_list
 
-mylist = random_descending_list(37)
-print(len(mylist))
-
 def evaluate_runtime(fn_name, start_size: int, end_size: int) -> np.array:
     """Evaluate the runtime for different size inputs."""
-    from exercises.ex07.sort_functions import selection_sort, insertion_sort
+    from sort_functions import selection_sort, insertion_sort
     NUM_TRIALS: int = 1
     times: list[float] = []
     for inp_size in range(start_size, end_size+1):
@@ -41,7 +38,7 @@ def evaluate_runtime(fn_name, start_size: int, end_size: int) -> np.array:
     return np.array(times)
 
 def evaluate_memory_usage(fn_name, start_size: int, end_size: int):
-    from exercises.ex07.sort_functions import selection_sort, insertion_sort
+    from sort_functions import selection_sort, insertion_sort
     usage: list[float] = []
     for inp_size in range(start_size, end_size+1):
         l: list[int] = random_descending_list(inp_size)
